@@ -14,14 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from student import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',include('student.urls')),
     path('students/', views.get_students),  # 获取所有学生信息的接口
     path('students/query/', views.query_students),  # 查询学生信息的接口
     path('sno/check/', views.is_exists_sno), # 校验学号是否存在

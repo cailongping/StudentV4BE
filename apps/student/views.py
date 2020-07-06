@@ -1,7 +1,8 @@
 # 引入Student的类
+from django.shortcuts import render
 from student.models import Student
 # 引入JsonResponse模块
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 # 导入json模块
 import json
 # 导入Q查询
@@ -17,6 +18,9 @@ import os
 # 引入处理Excel模块
 import openpyxl
 # Create your views here.
+
+def index(request):
+    return HttpResponse('Hello Git')
 
 def get_students(request):
     """获取所有学生的信息"""
